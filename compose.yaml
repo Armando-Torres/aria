@@ -2,8 +2,7 @@ services:
   web:
     image: node:20-slim
     working_dir: /app
-    #entrypoint: "npm run dev -- --host"
-    entrypoint: "tail -f /dev/null"
+    entrypoint: "npm run dev -- --host --port 5173"
     volumes:
       - ${PWD}:/app
     ports:
