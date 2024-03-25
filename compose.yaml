@@ -1,0 +1,11 @@
+services:
+  web:
+    image: node:20-slim
+    working_dir: /app
+    #entrypoint: "npm run dev -- --host"
+    entrypoint: "tail -f /dev/null"
+    volumes:
+      - ${PWD}:/app
+    ports:
+      - 8080:5173
+    
