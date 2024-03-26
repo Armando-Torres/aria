@@ -5,14 +5,12 @@ import { JsonFileRepository } from "../../persistence/JsonFileRepository";
 const posts = (new GetAllPosts((new JsonFileRepository('public/posts.json')))).execute();
 ---
 
-<h1>Bienvenido al post de Alejandra</h1>
-
-<p>Este será su cuerpo</p>
+<h1>Bienvenido a mi blog</h1>
 
 {
     posts.getResponse().map((post) => (
-      <a href={`/blog/${post.title}`}>
-        <h4>{post.body}</h4>
+      <a href={`/blog/${post.slug}`}>
+        <h4>{post.title}</h4>
       </a>
     ))
 }
