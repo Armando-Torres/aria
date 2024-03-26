@@ -1,0 +1,24 @@
+---
+
+import { GetAllPosts } from "../../../aria/post/application/GetAllPosts";
+import { JsonFileRepository } from "../../../aria/post/infrastructure/persistence/JsonFileRepository";
+import AriaLayout from "../../../aria/shared/infrastructure/layout/astro/AriaLayout.astro";
+
+export async function getStaticPaths () {
+    const repository = new JsonFileRepository('./public/posts.json');
+    const posts = (new GetAllPosts(repository)).execute().getResponse();
+    return posts.map(post => {
+        return {
+            params: {slug: post.slug},
+            props: { post }
+        } 
+    });
+}
+
+const { post } = Astro.props;
+---
+
+<AriaLayout>
+    <h1>{ post.title }</h1>
+    <p>{ post.body }</p>
+</AriaLayout>
