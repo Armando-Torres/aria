@@ -1,6 +1,6 @@
 ---
 import MenuLayout from "./MenuLayout.astro";
-
+const { activedMenu } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ import MenuLayout from "./MenuLayout.astro";
 		<title>Astro</title>
     </head>
     <body>
-        <MenuLayout />
+        <MenuLayout activedMenu={activedMenu}/>
         <slot />
     </body>
 </html>

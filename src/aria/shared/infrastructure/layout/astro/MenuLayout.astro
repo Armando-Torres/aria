@@ -1,8 +1,9 @@
 ---
+const { activedMenu } = Astro.props;
 
 ---
 
 <nav>
-    <a href="/">Home</a>
-    <a href="/blog">Blog</a>
+    <a href="/" data-is-active={ (activedMenu == "home").toString() }>Home</a>
+    <a href="/blog" data-is-active={ (activedMenu == "blog").toString() }>Blog</a>
 </nav>
