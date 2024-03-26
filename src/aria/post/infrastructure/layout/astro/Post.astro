@@ -1,0 +1,18 @@
+---
+import { GetAllPosts } from "../../../application/GetAllPosts";
+import { JsonFileRepository } from "../../persistence/JsonFileRepository";
+
+const posts = (new GetAllPosts((new JsonFileRepository('public/posts.json')))).execute();
+---
+
+<h1>Bienvenido al post de Alejandra</h1>
+
+<p>Este será su cuerpo</p>
+
+{
+    posts.getResponse().map((post) => (
+      <a href={`/blog/${post.title}`}>
+        <h4>{post.body}</h4>
+      </a>
+    ))
+}
