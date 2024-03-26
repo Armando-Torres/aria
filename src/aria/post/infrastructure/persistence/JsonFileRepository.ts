@@ -18,7 +18,7 @@ export class JsonFileRepository implements PostRepository{
 
         for (const element of rawContent) {
             this.posts.push(
-                new Post(element.title, element.body)
+                new Post(element.title, element.slug, element.body)
             );
         }
     }
