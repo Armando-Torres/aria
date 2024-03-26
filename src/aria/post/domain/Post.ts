@@ -5,6 +5,8 @@ import type { Video } from "../../shared/domain/vo/Video";
 export class Post {
     private _title: string;
 
+    private _slug: string;
+
     private _videos: Array<Video>;
 
     private _images: Array<Picture>;
@@ -15,8 +17,9 @@ export class Post {
 
     private _attatchments: Array<File>;
 
-    constructor(title: string, body: string) {
+    constructor(title: string, slug:string, body: string) {
         this._title = title;
+        this._slug = slug;
         this._body = body;
         this._videos = [];
         this._images = [];
@@ -26,6 +29,10 @@ export class Post {
 
     get title(): string {
         return this._title;
+    }
+
+    get slug(): string {
+        return this._slug;
     }
 
     get body(): string {
