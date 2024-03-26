@@ -1,7 +1,20 @@
 [
     {
         "title": "Alejandra's first post",
+        "slug": "alejandras-first-post",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "date": "2024-03-24"
+    },
+    {
+        "title": "Colometric theory",
+        "slug": "colometric-theory",
         "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "date": "2024-03-25"
+    },
+    {
+        "title": "Islamic \"Pajaritas\" pattern",
+        "slug": "islamic-pajaritas-pattern",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "date": "2024-03-26"
     }
 ]
